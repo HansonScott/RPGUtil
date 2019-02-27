@@ -15,7 +15,6 @@ namespace RPGUtil
             Unnatural_Monster = 3,
             Undead = 4,
         }
-
         public enum Quantities
         {
             One = 1,
@@ -27,6 +26,54 @@ namespace RPGUtil
             Pack = 7,
             Horde = 8,
             Army = 9,
+        }
+        public enum Conflicts
+        {
+            Military = 1,
+            Mystery = 2,
+            Political = 3,
+            Economic = 4,
+            Natural = 5,
+            Religious = 6,
+            Social = 7,
+            Theft = 8,
+        }
+
+        public static string GetDisplayForConflict(Conflicts c)
+        {
+            string result;
+            switch (c)
+            {
+                case Conflicts.Economic:
+                    result = "An economic crisis";
+                    break;
+                case Conflicts.Military:
+                    result = "A military action";
+                    break;
+                case Conflicts.Mystery:
+                    result = "A mystery";
+                    break;
+                case Conflicts.Natural:
+                    result = "A natural disaster";
+                    break;
+                case Conflicts.Political:
+                    result = "A political intrigue";
+                    break;
+                case Conflicts.Religious:
+                    result = "A religious uprising";
+                    break;
+                case Conflicts.Social:
+                    result = "A social upheaval";
+                    break;
+                case Conflicts.Theft:
+                    result = "A theft";
+                    break;
+                default:
+                    result = "Unknown";
+                    break;
+            }
+
+            return result;
         }
 
         public static string GetDisplayForQuantityOfAntagonists(Antagonists a, Quantities q)
@@ -106,17 +153,6 @@ namespace RPGUtil
             }
 
             return result;
-        }
-
-        public enum Conflicts
-        {
-            Military = 1,
-            Mystery = 2,
-            Political = 3,
-            Economical = 4,
-            Natural = 5,
-            Religious = 6,
-            Social = 7
         }
     }
 }

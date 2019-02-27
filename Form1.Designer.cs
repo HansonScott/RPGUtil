@@ -76,6 +76,7 @@
             this.lblQuantity = new System.Windows.Forms.Label();
             this.cbAntagonists = new System.Windows.Forms.ComboBox();
             this.lblAntagonist = new System.Windows.Forms.Label();
+            this.btnRandomQuest = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -578,6 +579,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnRandomQuest);
             this.tabPage2.Controls.Add(this.btnConflictRandom);
             this.tabPage2.Controls.Add(this.btnConflict);
             this.tabPage2.Controls.Add(this.cbConflict);
@@ -687,6 +689,16 @@
             this.lblAntagonist.TabIndex = 0;
             this.lblAntagonist.Text = "Antagonist";
             // 
+            // btnRandomQuest
+            // 
+            this.btnRandomQuest.Location = new System.Drawing.Point(22, 164);
+            this.btnRandomQuest.Name = "btnRandomQuest";
+            this.btnRandomQuest.Size = new System.Drawing.Size(75, 56);
+            this.btnRandomQuest.TabIndex = 10;
+            this.btnRandomQuest.Text = "Generate Random Quest";
+            this.btnRandomQuest.UseVisualStyleBackColor = true;
+            this.btnRandomQuest.Click += new System.EventHandler(this.btnRandomQuest_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -767,6 +779,7 @@
         private System.Windows.Forms.Label lblConflict;
         private System.Windows.Forms.Button btnConflict;
         private System.Windows.Forms.Button btnConflictRandom;
+        private System.Windows.Forms.Button btnRandomQuest;
     }
 }
 

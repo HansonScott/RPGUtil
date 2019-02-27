@@ -302,14 +302,48 @@ namespace RPGUtil
 
         private void btnRandomRequest_Click(object sender, EventArgs e)
         {
-            Output("-- Quest --");
+            string who = GetRandomQuantityAndAntagonists();
+            Output("-- Antagonist(s) --");
+            Output(who);
+        }
+
+        private string GetRandomQuantityAndAntagonists()
+        {
             int ia = Roller.RandomEnum(typeof(QuestObjects.Antagonists));
             QuestObjects.Antagonists a = (QuestObjects.Antagonists)Enum.Parse(typeof(QuestObjects.Antagonists), ia.ToString());
             int iq = Roller.RandomEnum(typeof(QuestObjects.Quantities));
             QuestObjects.Quantities q = (QuestObjects.Quantities)Enum.Parse(typeof(QuestObjects.Quantities), iq.ToString());
 
             string who = QuestObjects.GetDisplayForQuantityOfAntagonists(a, q);
-            Output(who);
+            return who;
+        }
+
+        private void btnConflict_Click(object sender, EventArgs e)
+        {
+            Output("Conflict: " + cbConflict.Text);
+        }
+
+        private void btnConflictRandom_Click(object sender, EventArgs e)
+        {
+            string s = GetRandomConflict();
+            Output("-- Conflict --");
+            Output(s);
+        }
+
+        private string GetRandomConflict()
+        {
+            int ic = Roller.RandomEnum(typeof(QuestObjects.Conflicts));
+            QuestObjects.Conflicts c = (QuestObjects.Conflicts)Enum.Parse(typeof(QuestObjects.Conflicts), ic.ToString());
+            string s = QuestObjects.GetDisplayForConflict(c);
+            return s;
+        }
+
+        private void btnRandomQuest_Click(object sender, EventArgs e)
+        {
+            Output("-- Quest --");
+            string what = GetRandomConflict();
+            string who = GetRandomQuantityAndAntagonists();
+            Output($"{what} involving {who}");
         }
         #endregion
         private void btnClear_Click(object sender, EventArgs e)
@@ -325,15 +359,5 @@ namespace RPGUtil
             tbOutput.AppendText(msg);
         }
 
-        private void btnConflict_Click(object sender, EventArgs e)
-        {
-            Output("Conflict: " + cbConflict.Text);
-        }
-
-        private void btnConflictRandom_Click(object sender, EventArgs e)
-        {
-            string c = Roller.RandomEnumName(typeof(QuestObjects.Conflicts));
-            Output("Conflict: " + c);
-        }
     }
 }
