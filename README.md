@@ -1,5 +1,5 @@
 # RPGUtil
-a simple desktop app to wrap a untility assembly for use in other games to roll dice and other utility features for D&amp;D.
+a simple Windows forms desktop app to provide simple utilities to roll dice, generate characters, and other utility features for D&amp;D.
 
 Trello Board: https://trello.com/b/PZANHb21
 
